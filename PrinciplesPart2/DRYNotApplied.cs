@@ -5,8 +5,23 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
+/*
+ Use Case Overview:
+
+Our use case involves the automated sending of emails under specific conditions. 
+Whenever user details are saved or updated in the database, an email should be sent to the Admin Team. In case of any exceptions during this process, 
+the Tech Support Team should also be notified via email. Similarly, when an order is placed, the Admin Team should be informed to initiate order processing,
+and any exceptions related to orders should trigger an email notification to the Tech Support Team.
+
+Challenges:
+
+One significant issue we face is redundancy in our codebase. For each of these business logic scenarios, we've written separate code segments to send emails.
+This redundancy has led to a total of 14 lines of code, and the duplication percentage exceeds 100%.
+
+ */
 namespace PrinciplesPart2.DRYNotApplied
 {
+
 
     public class UserModel
     {
